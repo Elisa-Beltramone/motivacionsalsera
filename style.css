@@ -101,7 +101,7 @@ body {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    height: auto; /* keep original */
+    height: 120vh; 
     width: auto;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -343,41 +343,58 @@ footer {
 }
 
 /* ============================
-   MOBILE MENU (Responsive)
+   MOBILE MENU
 ============================ */
 @media (max-width: 900px) {
+
+    /* Hide nav links by default */
     .nav-links {
-        display: none; /* hide by default */
+        display: none;
         flex-direction: column;
         width: 100%;
         background: black;
-        position: relative; /* pushes content down */
+        position: fixed; /* float above content */
+        top: 60px;       /* just below navbar */
+        left: 0;
         z-index: 1000;
+        padding: 20px 0;
+        max-height: calc(100vh - 60px); /* full height minus navbar */
+        overflow-y: auto;  /* scroll if too tall */
     }
 
+    /* Show menu when active */
     .nav-links.active {
-        display: flex; /* show when hamburger clicked */
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-        text-align: center;
-    }
-
-    .hamburger {
         display: flex;
     }
 
+    /* Menu items styling */
+    .nav-links li {
+        padding: 15px 0;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* Hamburger button visible */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1100; /* above menu */
+    }
+
+    /* Reduce hero text font size */
     .hero-text-top {
         font-size: 1.5rem;
     }
 
+    /* Logo smaller */
     .logo img {
         height: 70px;
     }
 }
 
-/* Optional: smaller course cards / social on narrow screens */
+/* Smaller course cards for narrow screens */
 @media (max-width: 800px) {
     .course-cards {
         flex-direction: column;
@@ -389,6 +406,7 @@ footer {
     }
 }
 
+/* Social icons stacked on narrowest screens */
 @media (max-width: 600px) {
     .social-contact {
         flex-direction: column;
