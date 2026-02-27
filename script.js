@@ -16,13 +16,6 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-    });
-});
 
 // Close menu on link click (mobile)
 document.querySelectorAll(".nav-links a").forEach(link => {
@@ -44,6 +37,14 @@ window.addEventListener("scroll", () => {
     });
 });
 
+const reveals = document.querySelectorAll(".reveal");
+reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const revealTop = el.getBoundingClientRect().top;
+    if (revealTop < windowHeight - 100) {
+        el.classList.add("active");
+    }
+});
 reveals.forEach(el => {
     const windowHeight = window.innerHeight;
     const revealTop = el.getBoundingClientRect().top;

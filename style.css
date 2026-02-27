@@ -262,7 +262,61 @@ body {
     box-shadow: 0 0 20px #ff2e63, 0 0 30px #ff2e63;
     transform: translateY(-2px);
 }
+/* ============================
+   ABOUT SECTION UPGRADE
+============================ */
 
+.about-section {
+    background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+    padding: 120px 20px;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.about-line {
+    width: 80px;
+    height: 3px;
+    background: #ff2e63;
+    margin: 0 auto 40px auto;
+    border-radius: 3px;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 50px;
+}
+
+/* Culture statement highlight */
+.culture-statement {
+    background: rgba(255, 46, 99, 0.08);
+    border-left: 4px solid #ff2e63;
+    padding: 25px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: white;
+    max-width: 750px;
+    margin: 0 auto;
+    transition: 0.3s ease;
+}
+
+.culture-statement:hover {
+    background: rgba(255, 46, 99, 0.15);
+    transform: translateY(-3px);
+}
 /* ============================
    SOCIAL & WHATSAPP
 ============================ */
@@ -345,9 +399,20 @@ footer {
 /* ============================
    MOBILE MENU
 ============================ */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#languageSwitcher {
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
 @media (max-width: 900px) {
 
-    /* Hide nav links by default */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -362,7 +427,23 @@ footer {
         overflow-y: auto;  /* scroll if too tall */
     }
 
-    /* Show menu when active */
+    .navbar {
+        padding: 15px 20px; /* less horizontal padding */
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    #languageSwitcher {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
+    .logo img {
+        height: 60px; /* slightly smaller */
+    }
+}
     .nav-links.active {
         display: flex;
     }
