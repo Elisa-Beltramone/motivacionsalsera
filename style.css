@@ -16,7 +16,8 @@ html {
 body {
     background: #111;
     color: white;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    overflow-x: hidden;
+    /* prevent horizontal scroll */
 }
 
 /* ============================
@@ -39,7 +40,8 @@ body {
 
 .nav-links {
     list-style: none;
-    display: flex; /* desktop */
+    display: flex;
+    /* desktop */
     gap: 25px;
 }
 
@@ -52,6 +54,25 @@ body {
 
 .nav-links a:hover {
     color: #ff2e63;
+}
+
+.mobile-lang select {
+    background: #ff2e63;
+    color: white;
+    cursor: pointer;
+}
+
+/* Desktop visible */
+.desktop-lang {
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+/* Hide mobile language on desktop */
+.mobile-lang {
+    display: none;
 }
 
 /* Hamburger menu */
@@ -92,7 +113,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 60px; /* navbar space */
+    padding-top: 60px;
+    /* navbar space */
 }
 
 .hero-video {
@@ -101,7 +123,7 @@ body {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    height: 120vh; 
+    height: 120vh;
     width: auto;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -262,6 +284,7 @@ body {
     box-shadow: 0 0 20px #ff2e63, 0 0 30px #ff2e63;
     transform: translateY(-2px);
 }
+
 /* ============================
    ABOUT SECTION UPGRADE
 ============================ */
@@ -317,6 +340,7 @@ body {
     background: rgba(255, 46, 99, 0.15);
     transform: translateY(-3px);
 }
+
 /* ============================
    SOCIAL & WHATSAPP
 ============================ */
@@ -397,7 +421,7 @@ footer {
 }
 
 /* ============================
-   MOBILE MENU
+   NAV RIGHT (DESKTOP DEFAULT)
 ============================ */
 .nav-right {
     display: flex;
@@ -411,67 +435,102 @@ footer {
     border: none;
     font-weight: bold;
 }
+
+/* Hide mobile language item on desktop */
+.mobile-lang {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mobile-lang select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+/* ============================
+   MOBILE MENU
+============================ */
 @media (max-width: 900px) {
 
+    /* Navbar padding */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* Smaller logo */
+    .logo img {
+        height: 60px;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+        z-index: 1100;
+    }
+
+    .desktop-lang {
+        display: none;
+    }
+
+    /* Show mobile language inside menu */
+    .mobile-lang {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Hide desktop nav links */
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         background: black;
-        position: fixed; /* float above content */
-        top: 60px;       /* just below navbar */
+        position: fixed;
+        top: 60px;
         left: 0;
         z-index: 1000;
         padding: 20px 0;
-        max-height: calc(100vh - 60px); /* full height minus navbar */
-        overflow-y: auto;  /* scroll if too tall */
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
 
-    .navbar {
-        padding: 15px 20px; /* less horizontal padding */
-    }
-
-    .nav-right {
-        gap: 10px;
-    }
-
-    #languageSwitcher {
-        font-size: 0.8rem;
-        padding: 4px 6px;
-    }
-
-    .logo img {
-        height: 60px; /* slightly smaller */
-    }
-}
+    /* Show nav when active */
     .nav-links.active {
         display: flex;
     }
 
-    /* Menu items styling */
+    /* Menu items */
     .nav-links li {
         padding: 15px 0;
         text-align: center;
         margin: 0;
     }
 
-    /* Hamburger button visible */
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        cursor: pointer;
-        z-index: 1100; /* above menu */
+    /* Show mobile language switcher inside menu */
+    .mobile-lang {
+        display: block;
     }
 
-    /* Reduce hero text font size */
+    /* Slightly smaller select on mobile */
+    .desktop-lang,
+    .mobile-lang select {
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* Adjust spacing right side */
+    .nav-right {
+        gap: 10px;
+    }
+
+    /* Hero text smaller (kept from your original mobile block) */
     .hero-text-top {
         font-size: 1.5rem;
-    }
-
-    /* Logo smaller */
-    .logo img {
-        height: 70px;
     }
 }
 
@@ -482,6 +541,7 @@ footer {
         align-items: center;
         gap: 20px;
     }
+
     .course-card {
         width: 80%;
     }
@@ -493,6 +553,7 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+
     .social-contact a.big-icon {
         width: 50px;
         height: 50px;

@@ -1,13 +1,38 @@
-// Language Switcher
-const switcher = document.getElementById("languageSwitcher");
-switcher.addEventListener("change", function () {
-    const lang = this.value;
+// ============================
+// LANGUAGE SWITCHER
+// ============================
+const desktopSwitcher = document.getElementById("languageSwitcherDesktop");
+const mobileSwitcher = document.getElementById("languageSwitcherMobile");
+
+function changeLanguage(lang) {
     document.querySelectorAll("[data-de]").forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
     });
-});
+}
 
-// Hamburger toggle
+/* Desktop */
+if (desktopSwitcher) {
+    desktopSwitcher.addEventListener("change", function () {
+        changeLanguage(this.value);
+        if (mobileSwitcher) mobileSwitcher.value = this.value;
+    });
+}
+
+/* Mobile */
+if (mobileSwitcher) {
+    mobileSwitcher.addEventListener("change", function () {
+        changeLanguage(this.value);
+        if (desktopSwitcher) desktopSwitcher.value = this.value;
+
+        // Close mobile menu after selection
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+    });
+}
+
+// ============================
+// HAMBURGER MENU TOGGLE
+// ============================
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
@@ -16,8 +41,7 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-
-// Close menu on link click (mobile)
+// Close mobile menu when a link is clicked
 document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
         hamburger.classList.remove("active");
@@ -25,46 +49,51 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
-// Scroll Reveal
-window.addEventListener("scroll", () => {
+// ============================
+// SCROLL REVEAL
+// ============================
+function revealOnScroll() {
     const reveals = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+
     reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
         const revealTop = el.getBoundingClientRect().top;
         if (revealTop < windowHeight - 100) {
             el.classList.add("active");
         }
     });
-});
+}
 
-const reveals = document.querySelectorAll(".reveal");
-reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const revealTop = el.getBoundingClientRect().top;
-    if (revealTop < windowHeight - 100) {
-        el.classList.add("active");
-    }
-});
-reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const revealTop = el.getBoundingClientRect().top;
-    if (revealTop < windowHeight - 100 && !el.classList.contains('active')) {
-        el.classList.add('active');
-    }
-});
+window.addEventListener("scroll", revealOnScroll);
+// Initial check on page load
+revealOnScroll();
 
-// Footer Year
-document.getElementById("year").textContent = new Date().getFullYear();
+// ============================
+// FOOTER YEAR
+// ============================
+const yearEl = document.getElementById("year");
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
-// Flyer Modal
+// ============================
+// FLYER MODAL
+// ============================
 const flyer = document.getElementById("flyerImage");
 const modal = document.getElementById("flyerModal");
 const modalImg = document.getElementById("modalImage");
 const closeModal = document.getElementById("closeModal");
 
-flyer.addEventListener("click", () => {
-    modal.style.display = "block";
-    modalImg.src = flyer.src;
-});
-closeModal.addEventListener("click", () => modal.style.display = "none");
-modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+if (flyer && modal && modalImg && closeModal) {
+    flyer.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = flyer.src;
+    });
+
+    closeModal.addEventListener("click", () => modal.style.display = "none");
+
+    // Close modal when clicking outside the image
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.style.display = "none";
+    });
+}
