@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivación Salsera | Kolumbianische Salsa in Bern</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Motivación Salsera Logo">
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="lessons.html" data-de="Kurse" data-es="Clases">Kurse</a></li>
+                <li><a href="events.html" data-de="Veranstaltungen" data-es="Eventos">Veranstaltungen</a></li>
+                <li><a href="prices.html" data-de="Preise" data-es="Precios">Preise</a></li>
+                <li><a href="about.html" data-de="Über Uns" data-es="Sobre Nosotros">Über Uns</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-es="Contacto">Kontakt</a></li>
+                <li class="mobile-lang">
+                    <select id="languageSwitcherMobile">
+                        <option value="de">DE</option>
+                        <option value="es">ES</option>
+                    </select>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- Desktop Language Switcher -->
+                <select id="languageSwitcherDesktop" class="desktop-lang">
+                    <option value="de">DE</option>
+                    <option value="es">ES</option>
+                </select>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Precios de Cursos de Salsa</h1>
+
+        <div class="cards-container">
+            <div class="course-card">
+                <h2>Salsa Caleña / Cubana / Salsa Ladies / Baile y Movimiento</h2>
+                <div class="price-list">
+                    <div class="price-item"><span>1 Lección (60 min):</span> 30 CHF</div>
+                    <div class="price-item"><span>8 Lecciones:</span> 180 CHF</div>
+                    <div class="price-item"><span>10 Lecciones:</span> 200 CHF</div>
+                    <div class="price-item"><span>Curso en Pareja:</span> 350 CHF</div>
+                    <div class="price-item"><span>Abonamento 1 Mes:</span> 380 CHF</div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h2>Fitness Salsa / Salsa Mamis / Baile Movimiento Adulto Mayor</h2>
+                <div class="price-list">
+                    <div class="price-item"><span>1 Lección (60 min):</span> 30 CHF</div>
+                    <div class="price-item"><span>8 Lecciones:</span> 200 CHF</div>
+                    <div class="price-item"><span>Abonamento 1 Mes:</span> 200 CHF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© <span id="year"></span> Motivación Salsera – Bern</p>
+    </footer>
+
+    <a href="https://wa.me/41790000000" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

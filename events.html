@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivación Salsera | Kolumbianische Salsa in Bern</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Motivación Salsera Logo">
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="lessons.html" data-de="Kurse" data-es="Clases">Kurse</a></li>
+                <li><a href="events.html" data-de="Veranstaltungen" data-es="Eventos">Veranstaltungen</a></li>
+                <li><a href="prices.html" data-de="Preise" data-es="Precios">Preise</a></li>
+                <li><a href="about.html" data-de="Über Uns" data-es="Sobre Nosotros">Über Uns</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-es="Contacto">Kontakt</a></li>
+                <li class="mobile-lang">
+                    <select id="languageSwitcherMobile">
+                        <option value="de">DE</option>
+                        <option value="es">ES</option>
+                    </select>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- Desktop Language Switcher -->
+                <select id="languageSwitcherDesktop" class="desktop-lang">
+                    <option value="de">DE</option>
+                    <option value="es">ES</option>
+                </select>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- WORKSHOPS SECTION -->
+    <section id="workshops" class="section dark reveal">
+        <h2 data-de="Eventos" data-es="Talleres">Eventos</h2>
+
+        <!-- Flyer container -->
+        <div class="flyer-container">
+            <img src="assets/flyer.jpg" alt="Salsa Workshop Flyer" class="flyer" id="flyerImage">
+        </div>
+
+        <!-- Button -->
+        <a href="https://wa.me/41790000000" target="_blank" class="btn glow-btn" data-de="Jetzt Anmelden"
+            data-es="Inscribirse Ahora">
+            Jetzt Anmelden
+        </a>
+
+        <!-- Flyer Modal -->
+        <div id="flyerModal" class="flyer-modal">
+            <span id="closeModal" class="close-modal" aria-label="Close modal">&times;</span>
+            <img id="modalImage" class="modal-content" alt="Full Flyer">
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© <span id="year"></span> Motivación Salsera – Bern</p>
+    </footer>
+
+    <a href="https://wa.me/41790000000" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

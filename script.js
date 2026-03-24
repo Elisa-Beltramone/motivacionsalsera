@@ -97,3 +97,31 @@ if (flyer && modal && modalImg && closeModal) {
         if (e.target === modal) modal.style.display = "none";
     });
 }
+
+
+// Select all course cards
+const courseCards = document.querySelectorAll('.course-card');
+
+// Function to check if element is visible
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    );
+}
+
+// Add 'active' class when in viewport
+function checkCards() {
+    courseCards.forEach(card => {
+        if (isInViewport(card)) {
+            card.classList.add('active');
+        } else {
+            card.classList.remove('active'); // optional: remove when out of view
+        }
+    });
+}
+
+// Listen to scroll and load
+window.addEventListener('scroll', checkCards);
+window.addEventListener('load', checkCards);

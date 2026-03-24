@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivación Salsera | Kolumbianische Salsa in Bern</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Motivación Salsera Logo">
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="lessons.html" data-de="Kurse" data-es="Clases">Kurse</a></li>
+                <li><a href="events.html" data-de="Veranstaltungen" data-es="Eventos">Veranstaltungen</a></li>
+                <li><a href="prices.html" data-de="Preise" data-es="Precios">Preise</a></li>
+                <li><a href="about.html" data-de="Über Uns" data-es="Sobre Nosotros">Über Uns</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-es="Contacto">Kontakt</a></li>
+                <li class="mobile-lang">
+                    <select id="languageSwitcherMobile">
+                        <option value="de">DE</option>
+                        <option value="es">ES</option>
+                    </select>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- Desktop Language Switcher -->
+                <select id="languageSwitcherDesktop" class="desktop-lang">
+                    <option value="de">DE</option>
+                    <option value="es">ES</option>
+                </select>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section reveal">
+        <div class="about-container">
+            <h2 data-de="Motivación Salsera" data-es="Motivación Salsera">
+                Motivación Salsera
+            </h2>
+            <div class="about-line"></div>
+
+            <h3 data-de="Wer wir sind" data-es="Quiénes somos">
+                Wer wir sind
+            </h3>
+
+            <p data-de="Motivación Salsera ist eine Schule für Salsa Caleña in Bern, gegründet im Jahr 2023 in der Schweiz. Unser Ziel ist es, die Freude und Leidenschaft des kolumbianischen Tanzes mit Menschen jeden Alters zu teilen. Von Kindern bis zu älteren Erwachsenen sind unsere Kurse so gestaltet, dass jeder Schüler Rhythmus, Technik und die Essenz der Salsa Caleña auf eine unterhaltsame und dynamische Weise entdecken kann."
+                data-es="Motivación Salsera es una escuela de salsa caleña ubicada en Berna, desde 2023 en Suiza, dedicada a compartir la alegría y la pasión del baile colombiano con personas de todas las edades. Desde niños hasta adultos mayores, nuestras clases están diseñadas para que cada alumno descubra el ritmo, la técnica y la esencia de la salsa caleña de manera divertida y dinámica.">
+                Motivación Salsera ist eine Schule für Salsa Caleña in Bern, gegründet im Jahr 2023 in der Schweiz.
+                Unser Ziel ist es, die Freude und Leidenschaft des kolumbianischen Tanzes mit Menschen jeden Alters zu
+                teilen. Von Kindern bis zu älteren Erwachsenen sind unsere Kurse so gestaltet, dass jeder Schüler
+                Rhythmus, Technik und die Essenz der Salsa Caleña auf eine unterhaltsame und dynamische Weise entdecken
+                kann.
+            </p>
+
+            <p data-de="Wir sind ein Team professioneller Lehrer, das sich dafür einsetzt, sowohl grundlegende als auch fortgeschrittene Techniken zu vermitteln, damit du mit Selbstvertrauen tanzen kannst. Doch bei Motivación Salsera geht es um mehr als nur Schritte und Figuren: Wir bieten einen Raum für kulturellen Austausch, in dem jeder Teilnehmer die Vielfalt der kolumbianischen Kultur erleben kann."
+                data-es="Somos un equipo de profesores profesionales, comprometidos con enseñar los fundamentos básicos y avanzados necesarios para bailar salsa con confianza. Pero en Motivación Salsera no solo enseñamos pasos y figuras: ofrecemos un espacio de interacción cultural, donde cada estudiante puede conocer y experimentar un poco de la riqueza de la cultura colombiana.">
+                Wir sind ein Team professioneller Lehrer, das sich dafür einsetzt, sowohl grundlegende als auch
+                fortgeschrittene Techniken zu vermitteln, damit du mit Selbstvertrauen tanzen kannst. Doch bei
+                Motivación Salsera geht es um mehr als nur Schritte und Figuren: Wir bieten einen Raum für kulturellen
+                Austausch, in dem jeder Teilnehmer die Vielfalt der kolumbianischen Kultur erleben kann.
+            </p>
+
+            <div class="culture-statement">
+
+                <p data-de="Unsere Kurse sind dynamisch, unterhaltsam und motivierend gestaltet, damit jeder das Lernen genießen kann. Neben Salsa Caleña bieten wir auch eine Vielzahl weiterer Aktivitäten an: Bachata, kubanische Salsa, Salsa für Mamis, Salsa Fitness sowie Tanzkurse für Kinder und Erwachsene. Bei Motivación Salsera ist Tanzen nur der Anfang – es ist eine kulturelle Erfahrung und eine Feier von Musik, Energie und lateinamerikanischer Leidenschaft."
+                    data-es="Nuestras clases son dinámicas, entretenidas y motivadoras, pensadas para que cada persona disfrute aprendiendo este maravilloso estilo. Además de salsa caleña, ofrecemos una amplia variedad de actividades: bachata, salsa cubana, salsa para mamis, salsa fitness y baile para niños y adultos. En Motivación Salsera, el baile es solo el comienzo: es una experiencia cultural y una celebración de la música, la energía y la pasión latina.">
+                    Unsere Kurse sind dynamisch, unterhaltsam und motivierend gestaltet, damit jeder das Lernen genießen
+                    kann. Neben Salsa Caleña bieten wir auch eine Vielzahl weiterer Aktivitäten an: Bachata, kubanische
+                    Salsa, Salsa für Mamis, Salsa Fitness sowie Tanzkurse für Kinder und Erwachsene. Bei Motivación
+                    Salsera ist Tanzen nur der Anfang – es ist eine kulturelle Erfahrung und eine Feier von Musik,
+                    Energie und lateinamerikanischer Leidenschaft.
+                </p>
+            </div>
+
+            <div class="bio-card">
+
+                <h3 data-de="Biografie von Jamilet Ortiz" data-es="Biografía de Jamilet Ortiz">
+                    Biografie von Jamilet Ortiz
+                </h3>
+
+                <p data-de="Jamilet Ortiz ist die Gründerin und treibende Kraft hinter Motivación Salsera. Ihr Projekt entstand aus dem Wunsch heraus, in der Schweiz einen Raum zu schaffen, in dem die kolumbianische Kultur durch Salsa geteilt werden kann. Als Tänzerin und Migrantin war es stets ihr Ziel, ihre kolumbianischen Wurzeln mit der Schweizer Kultur zu verbinden und einen Ort zu schaffen, an dem Tanz zur kulturellen Brücke wird."
+                    data-es="Jamilet Ortiz es la fundadora e impulsora de Motivación Salsera, un proyecto que nació con el deseo de crear un espacio en Suiza donde se pudiera compartir la riqueza de la cultura colombiana a través de la salsa. Como bailarina e inmigrante, su objetivo siempre ha sido conectar y fusionar sus raíces colombianas con la cultura suiza, ofreciendo un lugar donde el baile se convierte en puente cultural.">
+                    Jamilet Ortiz ist die Gründerin und treibende Kraft hinter Motivación Salsera. Ihr Projekt entstand
+                    aus dem Wunsch heraus, in der Schweiz einen Raum zu schaffen, in dem die kolumbianische Kultur durch
+                    Salsa geteilt werden kann. Als Tänzerin und Migrantin war es stets ihr Ziel, ihre kolumbianischen
+                    Wurzeln mit der Schweizer Kultur zu verbinden und einen Ort zu schaffen, an dem Tanz zur kulturellen
+                    Brücke wird.
+                </p>
+
+                <p data-de="Jamilet verfügt über mehr als 30 Jahre Erfahrung als Tänzerin, Lehrerin und Leiterin ihrer eigenen Tanzschule. Sie ist dreifache Gewinnerin des World Salsa Festivals (2008–2010) in den Kategorien Paar und Gruppe. Zudem hat sie in ihrer Heimatstadt Cali, Kolumbien, Kindergruppen ausgebildet und ihre Leidenschaft und Technik an neue Generationen weitergegeben."
+                    data-es="Jamilet cuenta con más de 30 años de experiencia como bailarina, profesora y directora de su propia escuela de salsa. Es triple campeona del Festival Mundial de Salsa (2008-2010) en las categorías de pareja y grupal. Su trayectoria también incluye la formación de grupos infantiles en su ciudad natal, Cali, Colombia, donde ha compartido su pasión y técnica con nuevas generaciones de bailarines.">
+                    Jamilet verfügt über mehr als 30 Jahre Erfahrung als Tänzerin, Lehrerin und Leiterin ihrer eigenen
+                    Tanzschule. Sie ist dreifache Gewinnerin des World Salsa Festivals (2008–2010) in den Kategorien
+                    Paar und Gruppe. Zudem hat sie in ihrer Heimatstadt Cali, Kolumbien, Kindergruppen ausgebildet und
+                    ihre Leidenschaft und Technik an neue Generationen weitergegeben.
+                </p>
+
+                <p data-de="Ihr Ansatz verbindet Professionalität, Begeisterung und Liebe zur Salsa und macht Motivación Salsera zu einem einzigartigen Ort, um zu lernen, zu genießen und die lateinamerikanische Kultur durch Tanz zu erleben."
+                    data-es="Su enfoque combina profesionalismo, entusiasmo y amor por la salsa, haciendo de Motivación Salsera un espacio único para aprender, disfrutar y vivir la cultura latina a través del baile.">
+                    Ihr Ansatz verbindet Professionalität, Begeisterung und Liebe zur Salsa und macht Motivación Salsera
+                    zu einem einzigartigen Ort, um zu lernen, zu genießen und die lateinamerikanische Kultur durch Tanz
+                    zu erleben.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© <span id="year"></span> Motivación Salsera – Bern</p>
+    </footer>
+
+    <a href="https://wa.me/41790000000" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

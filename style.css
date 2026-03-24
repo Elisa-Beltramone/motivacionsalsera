@@ -167,7 +167,7 @@ body {
 
 .section-content {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 60px auto;
     padding: 80px 20px;
     text-align: center;
 }
@@ -193,9 +193,12 @@ body {
     align-items: center;
     gap: 15px;
     transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+
 }
 
-.course-card:hover {
+.course-card.active {
     transform: translateY(-5px);
     box-shadow: 0 0 20px #ff2e63, 0 0 40px rgba(255, 46, 99, 0.5);
 }
@@ -210,7 +213,53 @@ body {
     line-height: 1.6;
     color: #ddd;
 }
+/* Glow animation */
+@keyframes glow {
+    0%, 33.33%, 100% {
+        box-shadow: 0 0 0px #ff2e63, 0 0 0px rgba(255, 46, 99, 0);
+        transform: translateY(0);
+    }
+    16.66% {
+        box-shadow: 0 0 20px #ff2e63, 0 0 40px rgba(255, 46, 99, 0.5);
+        transform: translateY(-5px);
+    }
+}
 
+/* Apply glow to all cards */
+.course-card {
+    animation: glow 9s infinite; /* 3 cards × 3s per glow */
+}
+
+/* Stagger the animation for each card */
+.course-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.course-card:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.course-card:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Apply glow to all cards */
+.course-card {
+    animation: glow 5s infinite;
+}
+
+/* Stagger the animation for each card */
+.course-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.course-card:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.course-card:nth-child(3) {
+    animation-delay: 3s;
+}
 /* ============================
    FLYER MODAL
 ============================ */
@@ -268,6 +317,9 @@ body {
 /* ============================
    GLOW BUTTON
 ============================ */
+/* ============================
+   GLOW BUTTON
+============================ */
 .glow-btn {
     background: #ff2e63;
     color: white;
@@ -285,6 +337,8 @@ body {
     transform: translateY(-2px);
 }
 
+
+
 /* ============================
    ABOUT SECTION UPGRADE
 ============================ */
@@ -292,6 +346,7 @@ body {
 .about-section {
     background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
     padding: 120px 20px;
+    margin: 40px auto;
 }
 
 .about-container {
@@ -300,11 +355,135 @@ body {
     text-align: center;
 }
 
+/* Main title */
 .about-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
     letter-spacing: 1px;
 }
+
+/* Subtitle */
+.about-section h3 {
+    font-size: 1.4rem;
+    margin: 40px 0 15px;
+    color: #ff2e63;
+}
+
+/* Divider line */
+.about-line {
+    width: 80px;
+    height: 3px;
+    background: #ff2e63;
+    margin: 0 auto 40px auto;
+    border-radius: 3px;
+}
+
+/* Paragraphs */
+.about-section p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+/* Highlight box (culture / important text) */
+.culture-statement {
+    background: rgba(255, 46, 99, 0.08);
+    border-left: 4px solid #ff2e63;
+    padding: 25px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+    max-width: 750px;
+    margin: 50px auto;
+    transition: 0.3s ease;
+}
+
+.culture-statement:hover {
+    background: rgba(255, 46, 99, 0.15);
+    transform: translateY(-3px);
+}
+
+
+.bio-card {
+    position: relative;
+    background: #111;
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 30px;
+    overflow: hidden;
+    z-index: 1;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.bio-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        270deg,
+        #ff2e63,
+        #ff0040,
+        #ff8c00,
+        #00f0ff,
+        #ff2e63
+    );
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 32px;
+    filter: blur(8px);
+    animation: glowMove 4s linear infinite;
+}
+
+.bio-card::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #111;
+    border-radius: 28px;
+    z-index: 0;
+}
+
+/* Inner content stays on top */
+.bio-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes glowMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bio-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Inner fill */
+.bio-card::after::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 30px;
+    background: #111;
+}
+
+/* Animation */
+@keyframes glowMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+
 
 .about-line {
     width: 80px;
@@ -350,7 +529,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px 40px;
-    margin-top: 40px;
+    margin: 40px auto;
     text-align: center;
 }
 
@@ -558,5 +737,85 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 30px;
+    }
+}
+
+
+/* ============================
+   PRICES PAGE
+============================ */
+
+/* Container for all course cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 120px auto;
+    max-width: 1200px;
+}
+
+/* Individual course cards */
+.course-card {
+    background: #1c1c1c;
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 300px;
+    transition: 0.4s;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 10px rgba(255,46,99,0.2);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ff2e63, 0 0 40px rgba(255,46,99,0.4);
+}
+
+/* Course titles */
+.course-card h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #ff2e63;
+}
+
+/* Price list inside cards */
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.price-item {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgba(255, 46, 99, 0.05);
+    transition: 0.3s;
+}
+
+.price-item span {
+    font-weight: 600;
+}
+
+.price-item:hover {
+    background: rgba(255, 46, 99, 0.15);
+    transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .course-card {
+        width: 90%;
     }
 }
