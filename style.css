@@ -358,6 +358,31 @@ section.prices h1 {
     }
 }
 
+@media (max-width: 600px) {
+    .prices-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .price-card {
+        width: 100%; /* full width on mobile */
+        padding: 20px 15px;
+        transform: none; /* remove hover transform for better layout */
+        box-shadow: 0 5px 15px rgba(255,46,99,0.3); /* lighter shadow */
+    }
+
+    .price-card.best {
+        transform: none; /* remove scaling for mobile */
+    }
+
+    .price-item {
+        font-size: 0.95rem; /* slightly smaller for mobile */
+        padding: 8px 12px;
+    }
+}
 
 /* ============================
    7. FLYER MODAL
