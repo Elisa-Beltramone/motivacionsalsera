@@ -7,7 +7,6 @@
     <title>Motivación Salsera | Kolumbianische Salsa in Bern</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +23,7 @@
                 <li><a href="events.html" data-de="Veranstaltungen" data-es="Eventos">Veranstaltungen</a></li>
                 <li><a href="prices.html" data-de="Preise" data-es="Precios">Preise</a></li>
                 <li><a href="about.html" data-de="Über Uns" data-es="Sobre Nosotros">Über Uns</a></li>
-                <li><a href="#contact" data-de="Kontakt" data-es="Contacto">Kontakt</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-es="Contacto">Kontakt</a></li>
                 <li class="mobile-lang">
                     <select id="languageSwitcherMobile">
                         <option value="de">DE</option>
@@ -68,21 +67,21 @@
         <h2 data-de="Unsere Kurse" data-es="Nuestras Clases">Unsere Kurse</h2>
         <div class="course-cards">
             <a href="lessons.html" class="course-card reveal active">
-                <i class="fas fa-child fa-2x"></i>
+                <img src="assets/icons/kids.svg" alt="" class="course-icon">
                 <p data-de="Lerne Salsa auf spielerische und rhythmische Weise."
                     data-es="Aprender salsa de forma divertida y rítmica.">
                     Lerne Salsa auf spielerische und rhythmische Weise.
                 </p>
             </a>
             <a href="lessons.html" class="course-card reveal">
-                <i class="fas fa-user-friends fa-2x"></i>
+                <img src="assets/icons/teenager.svg" alt="" class="course-icon">
                 <p data-de="Salsa-Kurse für Teenager – Energie, Stil und Selbstvertrauen"
                     data-es="Clases de salsa para adolescentes – energía, estilo y confianza">
                     Salsa-Kurse für Teenager – Energie, Stil und Selbstvertrauen
                 </p>
             </a>
             <a href="lessons.html" class="course-card reveal">
-                <i class="fas fa-user fa-2x"></i>
+                <img src="assets/icons/adults.svg" alt="" class="course-icon">
                 <p data-de="Salsa-Kurse für Erwachsene – Anfänger & Fortgeschrittene"
                     data-es="Clases de salsa para adultos – principiantes y avanzados">
                     Salsa-Kurse für Erwachsene – Anfänger & Fortgeschrittene
@@ -98,17 +97,28 @@
         </p>
     </section>
 
-   
+
 
 
 
     <footer>
         <p>© <span id="year"></span> Motivación Salsera – Bern</p>
+        <p>
+            <a href="impressum.html" data-de="Impressum" data-es="Aviso legal">
+                Impressum
+            </a>
+            <a href="datenschutz.html" data-de="Datenschutz" data-es="Política de privacidad">
+                Datenschutz
+            </a>
+        </p>
+
     </footer>
 
-    <a href="https://wa.me/41790000000" class="floating-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/41790000000" class="floating-whatsapp" target="_blank" rel="noopener noreferrer"
+        aria-label="WhatsApp">
+        <img src="assets/icons/whatsapp.svg" alt="">
     </a>
+
 
 </body>
 

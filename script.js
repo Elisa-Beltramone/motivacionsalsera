@@ -1,53 +1,104 @@
 // ============================
 // LANGUAGE SWITCHER
 // ============================
+
 const desktopSwitcher = document.getElementById("languageSwitcherDesktop");
 const mobileSwitcher = document.getElementById("languageSwitcherMobile");
 
 function changeLanguage(lang) {
+
+    // Change all translated elements
     document.querySelectorAll("[data-de]").forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
+
+        const translation = el.getAttribute(`data-${lang}`);
+
+        if (translation) {
+            el.textContent = translation;
+        }
+
     });
+
+    // Save selected language
+    localStorage.setItem("language", lang);
+
+    // Keep both switchers synchronized
+    if (desktopSwitcher) {
+        desktopSwitcher.value = lang;
+    }
+
+    if (mobileSwitcher) {
+        mobileSwitcher.value = lang;
+    }
 }
 
-/* Desktop */
+
+// ============================
+// LOAD SAVED LANGUAGE
+// ============================
+
+const savedLanguage = localStorage.getItem("language") || "de";
+
+changeLanguage(savedLanguage);
+
+
+// ============================
+// DESKTOP SWITCHER
+// ============================
+
 if (desktopSwitcher) {
+
     desktopSwitcher.addEventListener("change", function () {
         changeLanguage(this.value);
-        if (mobileSwitcher) mobileSwitcher.value = this.value;
     });
+
 }
 
-/* Mobile */
-if (mobileSwitcher) {
-    mobileSwitcher.addEventListener("change", function () {
-        changeLanguage(this.value);
-        if (desktopSwitcher) desktopSwitcher.value = this.value;
 
-        // Close mobile menu after selection
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
+// ============================
+// MOBILE SWITCHER
+// ============================
+
+if (mobileSwitcher) {
+
+    mobileSwitcher.addEventListener("change", function () {
+
+        changeLanguage(this.value);
+
+        // Close mobile menu
+        if (hamburger && navLinks) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        }
+
     });
+
 }
 
 // ============================
 // HAMBURGER MENU TOGGLE
 // ============================
+
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-});
+if (hamburger && navLinks) {
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
     });
-});
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        });
+
+    });
+
+}
 
 // ============================
 // SCROLL REVEAL
