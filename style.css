@@ -222,7 +222,7 @@ body {
     transition: var(--transition);
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 46, 99, 0.2);
-    animation: glow 5s infinite;
+    animation: glow 6s infinite;
 }
 
 .course-card:nth-child(1) {
@@ -230,12 +230,25 @@ body {
 }
 
 .course-card:nth-child(2) {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .course-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.course-card:nth-child(4) {
     animation-delay: 3s;
 }
+
+.course-card:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.course-card:nth-child(6) {
+    animation-delay: 5s;
+}
+
 
 .course-card i {
     color: var(--color-primary);
@@ -606,17 +619,14 @@ section.prices h1 {
     color: var(--color-primary);
 }
 
-.social-contact a.big-icon {
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: var(--transition);
+.social-contact a.big-icon img {
+    width: 32px;
+    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
 }
+
 
 .social-contact a.whatsapp.big-icon {
     background: #25D366;
@@ -655,7 +665,44 @@ section.prices h1 {
     transform: scale(1.1);
     box-shadow: 0 0 25px #25D366;
 }
+/* Mobile */
+@media (max-width: 600px) {
 
+.social-contact {
+    flex-direction: row;
+    gap: 50px;
+    margin: 35px auto;
+}
+
+.social-contact a.big-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    min-height: 58px;
+    padding: 13px;
+}
+
+.social-contact a.big-icon img {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.map-container {
+    margin-top: 40px;
+    border-radius: 12px;
+}
+
+.map-container iframe {
+    height: 250px;
+}
+
+.contact-address {
+    font-size: 0.95rem;
+}
+
+}
 /* ============================
    11. FOOTER
 ============================ */
