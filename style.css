@@ -2,18 +2,22 @@
    1. VARIABLES
 ============================ */
 :root {
-    --color-bg: #111;
-    --color-card: #1c1c1c;
+    --color-bg: #171522;
+    --color-card: #242033;
     --color-primary: #ff2e63;
-    --color-primary-hover: #ff0040;
-    --color-text: #fff;
-    --color-muted: #ddd;
+    --color-primary-hover: #ff4778;
+    --color-secondary: #8b5cf6;
+    --color-accent: #00d9ff;
+
+    --color-text: #ffffff;
+    --color-muted: #c7c4d4;
 
     --radius: 10px;
     --radius-lg: 20px;
 
     --transition: 0.3s ease;
 }
+
 
 /* ============================
    2. RESET & BASE
@@ -31,11 +35,15 @@ html {
 }
 
 body {
-    background: var(--color-bg);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(255, 46, 99, 0.10), transparent 30%),
+        var(--color-bg);
     color: var(--color-text);
     overflow-x: hidden;
     padding-top: 100px;
 }
+
 
 /* ============================
    3. NAVBAR
@@ -46,7 +54,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: black;
+    background: rgba(20, 18, 32, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -151,9 +164,20 @@ body {
     width: auto;
     transform: translate(-50%, -50%);
     z-index: -1;
-    filter: brightness(0.5);
+    filter: brightness(0.7) saturate(1.15);
 }
-
+hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.18),
+            rgba(255, 46, 99, 0.12)
+        );
+    z-index: -1;
+}
 .hero-text-top {
     font-weight: bold;
     text-shadow: 0 0 10px black;
@@ -186,8 +210,13 @@ body {
 }
 
 .dark {
-    background: var(--color-card);
+    background:
+        linear-gradient(135deg,
+            rgba(139, 92, 246, 0.08),
+            rgba(255, 46, 99, 0.05)),
+        var(--color-card);
 }
+
 
 .section-content {
     max-width: 900px;
@@ -208,7 +237,9 @@ body {
 }
 
 .course-card {
-    background: var(--color-card);
+    background: linear-gradient(145deg,
+            #29243a,
+            #211d30);
     padding: 20px;
     border-radius: var(--radius-lg);
     width: 300px;
@@ -221,7 +252,11 @@ body {
     color: var(--color-text);
     transition: var(--transition);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 46, 99, 0.2);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        0 0 10px rgba(255, 46, 99, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
     animation: glow 6s infinite;
 }
 
@@ -307,7 +342,11 @@ body {
 /* Prices Section */
 section.prices {
     padding: 100px 20px;
-    background: #111;
+    background:
+        radial-gradient(circle at 50% 0%,
+            rgba(139, 92, 246, 0.12),
+            transparent 45%),
+        var(--color-bg);
     text-align: center;
 }
 
@@ -328,8 +367,11 @@ section.prices h1 {
 
 /* Price Card */
 .price-card {
-    background: #1c1c1c;
+    background: linear-gradient(145deg,
+            #29243a,
+            #211d30);
     border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 30px 25px;
     position: relative;
     overflow: hidden;
@@ -386,14 +428,18 @@ section.prices h1 {
     justify-content: space-between;
     padding: 10px 15px;
     border-radius: 10px;
-    background: rgba(255, 46, 99, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
     transition: 0.3s;
 }
 
 .price-item:hover {
-    background: rgba(255, 46, 99, 0.15);
-    transform: translateX(3px);
+    background: rgba(255, 46, 99, 0.12);
+    border-color: rgba(255, 46, 99, 0.3);
+    transform: translateX(5px);
 }
+
 
 /* Price emphasis */
 .price-item span {
@@ -482,7 +528,17 @@ section.prices h1 {
    9. ABOUT SECTION
 ============================ */
 .about-section {
-    background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+    background:
+        radial-gradient(circle at 10% 30%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%),
+        radial-gradient(circle at 90% 70%,
+            rgba(255, 46, 99, 0.10),
+            transparent 30%),
+        linear-gradient(180deg,
+            #171522 0%,
+            #211d30 100%);
+
     padding: 40px 20px;
     margin: 40px auto;
 }
@@ -503,6 +559,10 @@ section.prices h1 {
     font-size: 1.4rem;
     margin: 40px 0 15px;
     color: var(--color-primary);
+}
+
+.about-section p {
+    color: #c7c4d4;
 }
 
 .about-line {
@@ -558,7 +618,13 @@ section.prices h1 {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(270deg, var(--color-primary), #ff0040, #ff8c00, #00f0ff, var(--color-primary));
+    background: linear-gradient(270deg,
+            #ff2e63,
+            #8b5cf6,
+            #00d9ff,
+            #8b5cf6,
+            #ff2e63);
+
     background-size: 400% 400%;
     z-index: -1;
     border-radius: 32px;
@@ -665,44 +731,46 @@ section.prices h1 {
     transform: scale(1.1);
     box-shadow: 0 0 25px #25D366;
 }
+
 /* Mobile */
 @media (max-width: 600px) {
 
-.social-contact {
-    flex-direction: row;
-    gap: 50px;
-    margin: 35px auto;
+    .social-contact {
+        flex-direction: row;
+        gap: 50px;
+        margin: 35px auto;
+    }
+
+    .social-contact a.big-icon {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        min-height: 58px;
+        padding: 13px;
+    }
+
+    .social-contact a.big-icon img {
+        width: 30px;
+        height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+
+    .map-container {
+        margin-top: 40px;
+        border-radius: 12px;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+
+    .contact-address {
+        font-size: 0.95rem;
+    }
+
 }
 
-.social-contact a.big-icon {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
-    min-height: 58px;
-    padding: 13px;
-}
-
-.social-contact a.big-icon img {
-    width: 30px;
-    height: 30px;
-    max-width: 30px;
-    max-height: 30px;
-}
-
-.map-container {
-    margin-top: 40px;
-    border-radius: 12px;
-}
-
-.map-container iframe {
-    height: 250px;
-}
-
-.contact-address {
-    font-size: 0.95rem;
-}
-
-}
 /* ============================
    11. FOOTER
 ============================ */
